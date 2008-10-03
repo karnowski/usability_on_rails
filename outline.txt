@@ -1,12 +1,15 @@
 [have a hand-out of books, blogs, & tools urls]
 [overall organize as a story, use literature terminology to describe where we are]
+[pick a bad user interface and demolish it?]
+  * low-budget: "import svn" on github
+  * sexy: ????
 
 == In Media Res ("into the middle of things", "roll for initiaive!" logo?) == 
-* most good video games, movies, TV shows, books, etc, get you right into the action and then unfold the back story through flashbacks or recollections
-* good software should follow the same theme
-* remember, you're building something that makes your *user* the hero; think of yourself as a writer or a game designer, and you're putting your user, the hero, in control of their own destiny
-* remember, you're coming in at the middle of the story -- the user already has a problem, you're trying to solve it
-* so let's run our talk today the same way -- let's come in at the middle of the story, straight into the action
+#* most good video games, movies, TV shows, books, etc, get you right into the action and then unfold the back story through flashbacks or recollections
+#* good software should follow the same theme
+#* remember, you're building something that makes your *user* the hero; think of yourself as a writer or a game designer, and you're putting your user, the hero, in control of their own destiny
+#* remember, you're coming in at the middle of the story -- the user already has a problem, you're trying to solve it
+#* so let's run our talk today the same way -- let's come in at the middle of the story, straight into the action
 
 == Don't Test Your Views ==
 * test code not views
@@ -65,6 +68,7 @@
   * problems with Rails' validation message
 * [describe "agile usability"]  [wtf do I do here?]
 * avoid simple pitfalls:
+(give a positive and/or negative example of each of these)
   * show the user where they are:
     * mileposts
     * street signs
@@ -107,7 +111,13 @@
   * people will look for an "escape hatch", thus the cancel link
 * avoid preferences -- be opinionated, think like Apple, choose the 80% design decision
   * [need anecdote here]
-* user testing
+[* "benevolent dicator" of design --> product manager]
+
+
+== big battle scene ==
+("wizard lair and sharpening tools")
+(developer is joseph campbell "supernatural mentor" --> merlin, guiding the hero, )
+* agile user testing
   * forget big labs, video & audio recorders
   * cheap, cheap, cheap
   * try to get REAL users  
@@ -119,10 +129,10 @@
     * earlier the better
   * "think aloud" testing with set objectives
 
-== Dream Sequence (visual?) ==
+==Trailer for the Sequal (visual?) ==
 (things rails needs) (covered elsewhere?)
 * better form control methods (form_tag bites)
-* better form builder objects (never actually use them myself)
+* form builder objects suck
   * need to have the web designers have input
   * use ERB somehow?
   * remind me of the JSP template tags, very cool
@@ -139,7 +149,7 @@
   * unit_mailer
 * better scaffolding?
 
-== Denoument (sp?) (visual?) ==
+== closing credits/denemount (sp?) (visual?) ==
 * lists of:
   * books
   * blogs
