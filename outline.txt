@@ -1,0 +1,141 @@
+[have a hand-out of books, blogs, & tools urls]
+[overall organize as a story, use literature terminology to describe where we are]
+
+== In Media Res ("into the middle of things", "roll for initiaive!" logo?) == 
+* most good video games, movies, TV shows, books, etc, get you right into the action and then unfold the back story through flashbacks or recollections
+* good software should follow the same theme
+* remember, you're building something that makes your *user* the hero; think of yourself as a writer or a game designer, and you're putting your user, the hero, in control of their own destiny
+* remember, you're coming in at the middle of the story -- the user already has a problem, you're trying to solve it
+* so let's run our talk today the same way -- let's come in at the middle of the story, straight into the action
+
+== Don't Test Your Views ==
+* test code not views
+* pull code out of view to test
+  * test your helpers
+  * unit_controller
+  * safe_erb
+* your HTML/CSS is *DATA*, you don't test data, you *validate* it
+  * tarantula
+* Remember, HTML/CSS is NOT procedural code
+  * no conditional logic
+  * don't try to make it code
+  * no HAML!!
+  
+== Flashback - The Design Process ("how did we get here?") ("dreamy harp music", visual?) ==
+=== What do we need to build? ===
+* start with a user interview
+  * if you can't get a real user, get the best proxy you can 
+  * learn the user's language, you need to speak it fluently!
+  * stay agile --> most usability docs are overkill, just get enough to "pave the road"
+* your user is a hero in a story, you're building a tool to help them slay their dragons
+  * make sure you understand what the problem is -- why does the user want to slay that dragon?
+  * be aware of the needs of the user versus the needs of their supervisors
+    * anecdote: telecom switch troubleshooters at WCOM
+* don't build a monolithic app if you don't have to
+  * Justin's "small things, loosely joined" talk, railsconf & railsconf europe [(check name)]
+  * write a mini-app for user type, have a shared login if necessary
+  * sometimes sinatra or camping is a better fit than rails or merb
+
+=== What is it going to look like? ===
+(talk about importance of real designers, allowing their input, no haml)
+(need screenshots, walk-throughs, example of real sketches, etc.)
+* start with a sketch of the page flows
+* then a sketch of the individual page(s)
+  * for the love of God, start with a sketch
+  * sharpie & pad of paper
+  * [explain benefits of paper]
+  * "paper prototyping"
+* optionally go to OmniGraffle to create a sitemap using the brainstorm outliner tool (demonstrate?)
+* optionally go to OmniGraffle to create a wireframe of the page for balance & real estate usage
+* highly recommended you build an HTML mockup using serve + ERB
+  * mention John Long
+  * demonstrate layouts
+  * push ERB over HAML (no haml!)
+  * easy to push to real Rails/Merb erb templates
+[* at last stage, use Geoffrey Keene's: down draft, up draft, dental draft?]
+  
+== "Meanwhile, back at the ranch..." (visual: western parody?) ==
+=== What makes for a usable application? ===
+(order/clean these up)
+(need tech example at this point)
+* when using Ajax in-place editing, have error/response messages near where user is working
+* good error messages
+  * wicked_messenger
+  * problems with Rails' validation message
+* [describe "agile usability"]  [wtf do I do here?]
+* avoid simple pitfalls:
+  * show the user where they are:
+    * mileposts
+    * street signs
+    * breadcrumbs
+  * reduce memory load
+    * scratchpad, possibily "invisible"
+  * NEVER THROW AWAY YOUR USERS WORK!
+  * don't make the user wonder if you heard them
+  * [use the word "customer" instead "user" if you can... preferred]
+* avoid Rails scaffolding
+  * "back" link is terrible -- never put one up there
+  * the user already has a "back" button
+  * Streamlined, ActiveScaffold, AutoAdmin are okay in back-end screens
+    * never show to end customer/user
+    * real screens are still preferable
+* understand how users actually see our user interfaces
+  * "engineer's fallacy"
+    * anecdote: tj @ the red hat building for Ruby Hoedown
+  * non-linear scanning of pages, not linear reading
+  * "data smells" - "hunter/gatherer of data" mentality
+  * ad blindness
+  * "satisficing"
+  * "technology myths & superstitions"
+    * [need anecdotes here]
+  * people don't read
+  * "help doesn't"
+  * prefer JIT help
+    * anecdote: got flack from engineers at first company, love from second company
+  * use buttons for actions, links for navigation
+  * use link for "cancel", button for preferred action
+    * people will click buttons without reading
+    * people will look for an "escape hatch", thus the cancel link
+
+* user testing
+  * forget big labs, video & audio recorders
+  * cheap, cheap, cheap
+  * try to get REAL users  
+  * use your neighbors, borrow your spouse & your mom
+  * any human being can be a good test subject -- just grade on a curve
+  * only need three testers, just be sure to rinse & repeat
+  * "get it" testing --> "tell me what you see"
+    * sketches, wireframes, mockup, and real UI
+    * earlier the better
+  * "think aloud" testing with set objectives
+
+== Dream Sequence (visual?) ==
+(things rails needs) (covered elsewhere?)
+* better form control methods (form_tag bites)
+* better form builder objects (never actually use them myself)
+  * need to have the web designers have input
+  * use ERB somehow?
+  * remind me of the JSP template tags, very cool
+* better error messages
+  * validation messages are great for DEVELOPERS
+  * need way to convert those to real error messages with contextual text & recommendation on how to fix
+    * for example, "click the <something> button below"
+  * similar needs for flash[:notice] and flash[:error] messages
+  * wicked_messenger
+* need better testing for creating mail messages
+  * just hasn't got the love that other part of rails has had lately
+  * red-headed stepchild
+  * unit_mailer
+
+== Denoument (sp?) (visual?) ==
+* lists of:
+  * books
+  * blogs
+  * tools
+* parting words
+  * reiterate common themes
+    * think of your software as part of the user's story
+    * imagine yourself a game designer or story author
+    * [....]
+    * user testing!
+    * (no HAML!) (followup joke!)
