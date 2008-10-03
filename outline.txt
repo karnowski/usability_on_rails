@@ -45,6 +45,7 @@
   * sharpie & pad of paper
   * [explain benefits of paper]
   * "paper prototyping"
+  * rinse & repeat
 * optionally go to OmniGraffle to create a sitemap using the brainstorm outliner tool (demonstrate?)
 * optionally go to OmniGraffle to create a wireframe of the page for balance & real estate usage
 * highly recommended you build an HTML mockup using serve + ERB
@@ -52,7 +53,7 @@
   * demonstrate layouts
   * push ERB over HAML (no haml!)
   * easy to push to real Rails/Merb erb templates
-[* at last stage, use Geoffrey Keene's: down draft, up draft, dental draft?]
+[* at some stages, use Geoffrey Keene's: down draft, up draft, dental draft?]
   
 == "Meanwhile, back at the ranch..." (visual: western parody?) ==
 === What makes for a usable application? ===
@@ -68,6 +69,10 @@
     * mileposts
     * street signs
     * breadcrumbs
+    * how-to do each of theses
+      * use layouts, content_for, nested_layouts
+      * [find breadcrumb plugin I like?]
+      * [look at Geoff's SEO plugin]
   * reduce memory load
     * scratchpad, possibily "invisible"
   * NEVER THROW AWAY YOUR USERS WORK!
@@ -79,24 +84,29 @@
   * Streamlined, ActiveScaffold, AutoAdmin are okay in back-end screens
     * never show to end customer/user
     * real screens are still preferable
-* understand how users actually see our user interfaces
-  * "engineer's fallacy"
-    * anecdote: tj @ the red hat building for Ruby Hoedown
-  * non-linear scanning of pages, not linear reading
-  * "data smells" - "hunter/gatherer of data" mentality
-  * ad blindness
-  * "satisficing"
-  * "technology myths & superstitions"
-    * [need anecdotes here]
-  * people don't read
-  * "help doesn't"
-  * prefer JIT help
-    * anecdote: got flack from engineers at first company, love from second company
-  * use buttons for actions, links for navigation
-  * use link for "cancel", button for preferred action
-    * people will click buttons without reading
-    * people will look for an "escape hatch", thus the cancel link
-
+    
+=== understand how users actually see our user interfaces ===
+(where should this section go?  before the "what makes a usable app" section?)
+* "engineer's fallacy"
+  * Don Norman -- __Emotional Design__ and __Design of Everyday Things__
+  * anecdote: tj @ the red hat building for Ruby Hoedown
+* non-linear scanning of pages, not linear reading
+  * [show a heat-map eye tracking screen or video?]
+* "data smells" - "hunter/gatherer of data" mentality
+* ad blindness
+* "satisficing"
+* "technology myths & superstitions"
+  * [need anecdotes here]
+* people don't read
+* "help doesn't"
+* prefer JIT help
+  * anecdote: got flack from engineers at first company, love from second company
+* use buttons for actions, links for navigation
+* use link for "cancel", button for preferred action
+  * people will click buttons without reading
+  * people will look for an "escape hatch", thus the cancel link
+* avoid preferences -- be opinionated, think like Apple, choose the 80% design decision
+  * [need anecdote here]
 * user testing
   * forget big labs, video & audio recorders
   * cheap, cheap, cheap
@@ -123,9 +133,11 @@
   * similar needs for flash[:notice] and flash[:error] messages
   * wicked_messenger
 * need better testing for creating mail messages
+  * an email is a user interface, it's 100% view
   * just hasn't got the love that other part of rails has had lately
   * red-headed stepchild
   * unit_mailer
+* better scaffolding?
 
 == Denoument (sp?) (visual?) ==
 * lists of:
