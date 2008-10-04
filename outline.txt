@@ -1,155 +1,187 @@
-[have a hand-out of books, blogs, & tools urls]
-[overall organize as a story, use literature terminology to describe where we are]
-[pick a bad user interface and demolish it?]
-  * low-budget: "import svn" on github
-  * sexy: ????
+= Usability on Rails = (1 hour talk)
 
-== In Media Res ("into the middle of things", "roll for initiaive!" logo?) == 
-#* most good video games, movies, TV shows, books, etc, get you right into the action and then unfold the back story through flashbacks or recollections
-#* good software should follow the same theme
-#* remember, you're building something that makes your *user* the hero; think of yourself as a writer or a game designer, and you're putting your user, the hero, in control of their own destiny
-#* remember, you're coming in at the middle of the story -- the user already has a problem, you're trying to solve it
-#* so let's run our talk today the same way -- let's come in at the middle of the story, straight into the action
+== Table of Contents ==
+01 mins * Let's Get Straight to the Action! (visual: "roll for initiative!")
+10 mins * Don't Test Your Views
+03 mins * In Media Res ("into the middle of things")
+01 mins * Flashback - The Design Process
+05 mins   * What do we need to build?
+05 mins   * What is it going to look like?
+05 mins * Hero's Mentality: understand how users actually see our user interfaces
+10 mins * Training Montage:What makes for a usable application?
+05 mins * ???: Agile Usability Testing
+05 mins * Big Battle Scene
+10 mins * Questions
 
+
+== Let's Get Straight to the Action! (visual: "roll for initiative!")
 == Don't Test Your Views ==
+* "treat views as data, not code"
 * test code not views
-* pull code out of view to test
-  * test your helpers
-  * unit_controller
-  * safe_erb
-* your HTML/CSS is *DATA*, you don't test data, you *validate* it
-  * tarantula
 * Remember, HTML/CSS is NOT procedural code
   * no conditional logic
   * don't try to make it code
-  * no HAML!!
-  
+  * no HAML!! [where to explain the ideal "web designer + developer interaction"?]
+* RSpec "render view" testing is good for making sure that given correct inputs the view will render, but don't use assert_select for html unless you REALLY have to, because it makes for such a brittle test; prefer tarantula instead
+* to be clear, if you're writing unobtrusive javascript and views with no logic in them, then there's no logic in the view itself, so need to test it
+* pull code out of view to test
+  * test your helpers [find tester plugin?]
+  * unit_controller [display examples]
+  * safe_erb [display examples]
+* your HTML/CSS is *DATA*, you don't test data, you *validate* it
+  * tarantula
+    * make sure you turn on HTML tidy (& gem install tidy)
+    * also allows security tests by fuzzing attacks
+    * [display examples of code & HTML]
+
+
+== In Media Res ("into the middle of things") (visual: ???) == 
+[explain hero analogy (refer to Kathy Sierra?)]
+* most good video games, movies, TV shows, books, etc, get you right into the action and then unfold the back story through flashbacks or recollections
+* good software should follow the same theme
+* remember, you're building something that makes your *user* the hero; think of yourself as a writer or a game designer, and you're putting your user, the hero, in control of their own destiny
+* remember, you're coming in at the middle of the story -- the user already has a problem, you're trying to solve it
+* use images from Office Space as our "hero" user?
+  * use to contrast & compare the typical "fantasy hero"?
+  * use the D&D "complete warrior" screenshot?
+  * use a shot of Ash from "Army of Darkness"?
+
+
 == Flashback - The Design Process ("how did we get here?") ("dreamy harp music", visual?) ==
 === What do we need to build? ===
-* start with a user interview
-  * if you can't get a real user, get the best proxy you can 
-  * learn the user's language, you need to speak it fluently!
-  * stay agile --> most usability docs are overkill, just get enough to "pave the road"
 * your user is a hero in a story, you're building a tool to help them slay their dragons
   * make sure you understand what the problem is -- why does the user want to slay that dragon?
-  * be aware of the needs of the user versus the needs of their supervisors
-    * anecdote: telecom switch troubleshooters at WCOM
-* don't build a monolithic app if you don't have to
-  * Justin's "small things, loosely joined" talk, railsconf & railsconf europe [(check name)]
-  * write a mini-app for user type, have a shared login if necessary
-  * sometimes sinatra or camping is a better fit than rails or merb
+* start with a user interview
+  * if you can't get a real user, get the best proxy you can 
+  * three kinds of people NOT to use: ([remove this?])
+    * developers
+    * marketing people (for the app you're building)
+    * presidents, CEO, VP, etc (unless the app specifically targets them)
+  * learn the user's language, you need to speak it fluently!
+    * start a glossary if necessary
+    * anecdote: red vs green for IT vs facilities people
+* stay agile
+  * most usability docs are overkill, just get enough to "pave the road"
+  * start with a good idea, put it front of a user, then tweak & repeat
+* be aware of the needs of the user versus the needs of their supervisors
+  * anecdote: telecom switch troubleshooters at WCOM
+
 
 === What is it going to look like? ===
-(talk about importance of real designers, allowing their input, no haml)
-(need screenshots, walk-throughs, example of real sketches, etc.)
+[(need screenshots, walk-throughs, example of real sketches, etc.)]
+* ideal developer & designer interaction versus real-world
+  * ideal: developers have designer on staff, handles all UI
+  * almost-as-good: developers hire freelance designer for HTML/CSS, developers implement on real pages
+  * dealing-with-it: developer must be designer too...
+    * danger here is that there's a skill mismatch here, so devs take short-cuts like HAML
+    * always leave room for a real designer to have input later (no haml)
 * start with a sketch of the page flows
+  * do NOT consider implementation at this point
+  * wildly invent anything and everything
+  * after we learn the intent of the application, we can scale back scope to reality based on money & time
+  * without letting our imagination run wild, we will leave out do-able and innovative techniques
+  * constraints promote creativity, but only after we understand the best user experience
+  * remember it takes a lot of bad ideas to get to a good one
 * then a sketch of the individual page(s)
-  * for the love of God, start with a sketch
   * sharpie & pad of paper
-  * [explain benefits of paper]
+  * explain benefits of paper
+    * cheap & easy
+    * user feels that they are involved & can change your stuff
+    * easy to throw away and "go back to the drawing board"
   * "paper prototyping"
   * rinse & repeat
-* optionally go to OmniGraffle to create a sitemap using the brainstorm outliner tool (demonstrate?)
+* optionally go to OmniGraffle to create a sitemap using the brainstorm outliner tool 
+  * (demonstrate?)
 * optionally go to OmniGraffle to create a wireframe of the page for balance & real estate usage
+  * [show example]
 * highly recommended you build an HTML mockup using serve + ERB
   * mention John Long
   * demonstrate layouts
   * push ERB over HAML (no haml!)
   * easy to push to real Rails/Merb erb templates
-[* at some stages, use Geoffrey Keene's: down draft, up draft, dental draft?]
-  
-== "Meanwhile, back at the ranch..." (visual: western parody?) ==
-=== What makes for a usable application? ===
-(order/clean these up)
-(need tech example at this point)
-* when using Ajax in-place editing, have error/response messages near where user is working
-* good error messages
-  * wicked_messenger
-  * problems with Rails' validation message
-* [describe "agile usability"]  [wtf do I do here?]
-* avoid simple pitfalls:
-(give a positive and/or negative example of each of these)
-  * show the user where they are:
-    * mileposts
-    * street signs
-    * breadcrumbs
-    * how-to do each of theses
-      * use layouts, content_for, nested_layouts
-      * [find breadcrumb plugin I like?]
-      * [look at Geoff's SEO plugin]
-  * reduce memory load
-    * scratchpad, possibily "invisible"
-  * NEVER THROW AWAY YOUR USERS WORK!
-  * don't make the user wonder if you heard them
-  * [use the word "customer" instead "user" if you can... preferred]
-* avoid Rails scaffolding
-  * "back" link is terrible -- never put one up there
-  * the user already has a "back" button
-  * Streamlined, ActiveScaffold, AutoAdmin are okay in back-end screens
-    * never show to end customer/user
-    * real screens are still preferable
-    
-=== understand how users actually see our user interfaces ===
-(where should this section go?  before the "what makes a usable app" section?)
+
+== Hero's Mentality: understand how users actually see our user interfaces ==
 * "engineer's fallacy"
   * Don Norman -- __Emotional Design__ and __Design of Everyday Things__
   * anecdote: tj @ the red hat building for Ruby Hoedown
+    * need photo of RedHat or diagram of front of building
 * non-linear scanning of pages, not linear reading
   * [show a heat-map eye tracking screen or video?]
 * "data smells" - "hunter/gatherer of data" mentality
 * ad blindness
 * "satisficing"
 * "technology myths & superstitions"
-  * [need anecdotes here]
-* people don't read
-* "help doesn't"
-* prefer JIT help
-  * anecdote: got flack from engineers at first company, love from second company
+  * anecdote: dentist's office attempting to delete a Word doc by removing all text
+  * [better anecdote?]
+
+== Training Montage: (visual: training montage from somewhere?)  ==
+=== What makes for a usable application? ===
+(order/clean these up)
+(need tech example at this point)
+[trim this section WAY down]
+[split this into two subsections?]
+(give a positive and/or negative example of each of these)
+[use the word "customer" instead "user" if you can... preferred]
+* show the user where they are:
+  * mileposts
+  * street signs
+  * breadcrumbs
+  * how-to do each of theses
+    * use layouts, content_for, nested_layouts
+    * [find breadcrumb plugin I like?]
+    * [look at Geoff's SEO plugin]
+* reduce memory load
+  * scratchpad, possibily "invisible"
+  * [Rails example?]
+* NEVER THROW AWAY YOUR USERS WORK!
+  * [example?]
+* don't make the user wonder if you heard them
+  * [example?]
+* good error messages
+  * validation messages are great for DEVELOPERS
+  * need way to convert those to real error messages with contextual text & recommendation on how to fix
+    * for example, "click the <something> button below"
+  * similar needs for flash[:notice] and flash[:error] messages
+  * wicked_messenger
+  * when using Ajax in-place editing, have error/response messages near where user is working
+* avoid Rails scaffolding
+  * "back" link is terrible -- never put one up there
+  * the user already has a "back" button
+  * Streamlined, ActiveScaffold, AutoAdmin are okay in back-end screens
+    * never show to end customer/user
+    * real screens are still preferable
+* people don't read ("don't make me think")
+  * "help doesn't"
+  * prefer JIT help
+    * anecdote: got flack from engineers at first company, love from second company
 * use buttons for actions, links for navigation
 * use link for "cancel", button for preferred action
   * people will click buttons without reading
   * people will look for an "escape hatch", thus the cancel link
 * avoid preferences -- be opinionated, think like Apple, choose the 80% design decision
   * [need anecdote here]
-[* "benevolent dicator" of design --> product manager]
-
-
-== big battle scene ==
-("wizard lair and sharpening tools")
-(developer is joseph campbell "supernatural mentor" --> merlin, guiding the hero, )
-* agile user testing
-  * forget big labs, video & audio recorders
-  * cheap, cheap, cheap
-  * try to get REAL users  
-  * use your neighbors, borrow your spouse & your mom
-  * any human being can be a good test subject -- just grade on a curve
-  * only need three testers, just be sure to rinse & repeat
-  * "get it" testing --> "tell me what you see"
-    * sketches, wireframes, mockup, and real UI
-    * earlier the better
-  * "think aloud" testing with set objectives
-
-==Trailer for the Sequal (visual?) ==
-(things rails needs) (covered elsewhere?)
-* better form control methods (form_tag bites)
-* form builder objects suck
+* Rails needs better form control methods (form_tag bites)
+* Rails form builder objects suck
+  * too complicated, use helpers instead
   * need to have the web designers have input
-  * use ERB somehow?
-  * remind me of the JSP template tags, very cool
-* better error messages
-  * validation messages are great for DEVELOPERS
-  * need way to convert those to real error messages with contextual text & recommendation on how to fix
-    * for example, "click the <something> button below"
-  * similar needs for flash[:notice] and flash[:error] messages
-  * wicked_messenger
-* need better testing for creating mail messages
-  * an email is a user interface, it's 100% view
-  * just hasn't got the love that other part of rails has had lately
-  * red-headed stepchild
-  * unit_mailer
 * better scaffolding?
 
-== closing credits/denemount (sp?) (visual?) ==
+== [hero-analogy?] Agile Usability Testing (visual: ???) ==
+* forget big labs, video & audio recorders
+* cheap, cheap, cheap
+* try to get REAL users  
+* use your neighbors, borrow your spouse & your mom
+* any human being can be a good test subject -- just grade on a curve
+* only need three testers, just be sure to rinse & repeat
+* "get it" testing --> "tell me what you see"
+  * sketches, wireframes, mockup, and real UI
+  * earlier the better
+  * as developers, we want to explain our work, but this isn't "show & tell", it's "I Spy" or looking at cloud animals
+* "think aloud" testing with set objectives
+
+== Big Battle Scene (visual: ???) ==
+* at this point, we're out of the game
+* we have to trust that our preparation and equipping of our hero allows them to save the day
 * lists of:
   * books
   * blogs
@@ -161,3 +193,44 @@
     * [....]
     * user testing!
     * (no HAML!) (followup joke!)
+
+
+== QUESTIONS ==
+[15 minutes]
+
+
+
+
+
+
+== EXTRA ==
+* don't build a monolithic app if you don't have to
+  * Justin's "small things, loosely joined" talk, railsconf & railsconf europe [(check name)]
+  * write a mini-app for user type, have a shared login if necessary
+  * sometimes sinatra or camping is a better fit than rails or merb
+  
+[* "benevolent dicator" of design --> product manager]  
+
+# * first off, why should you care?
+#   * value to customer
+#   * historically professional usability engineers are not very agile
+#     * "if you know enough before hand, we can build the right app the first time"
+#     * it's better to get a good idea, build it, test it, tweak it, until it's right
+#   * usability is almost the same skill as technical writing, and we expect all professionals to be able to write technically
+
+* Geoffrey Keene's down, up, and dental drafts (too many analogies/metaphors in this talk already)
+* need better testing for creating mail messages
+  * an email is a user interface, it's 100% view
+  * just hasn't got the love that other part of rails has had lately
+  * red-headed stepchild
+  * unit_mailer
+
+("wizard lair and sharpening tools")
+(developer is joseph campbell "supernatural mentor" --> merlin, guiding the hero, )
+
+
+== TODO ==
+* have a hand-out of books, blogs, & tools urls?
+* pick a bad user interface and demolish it?
+  * low-budget: "import svn" on github
+  * sexy: ????
