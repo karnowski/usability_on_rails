@@ -132,7 +132,7 @@
     * [look at Geoff's SEO plugin]
 * reduce memory load
   * scratchpad, possibily "invisible"
-  * [Rails example?]
+  * [Rails example? -- use acts_as_state_machine/aasm?]
 * NEVER THROW AWAY YOUR USERS WORK!
   * [example?]
 * don't make the user wonder if you heard them
