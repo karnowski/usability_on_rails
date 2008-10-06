@@ -1,4 +1,4 @@
-require 'test_helper'
+require '../test_helper'
 
 class BogeysControllerTest < ActionController::TestCase
   def test_should_get_index

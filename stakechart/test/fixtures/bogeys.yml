@@ -3,13 +3,13 @@
 one:
   name: MyString
   living_name: MyString
-  type: MyString
+  classification: MyString
   status: MyString
   description: MyText
 
 two:
   name: MyString
   living_name: MyString
-  type: MyString
+  classification: MyString
   status: MyString
   description: MyText
