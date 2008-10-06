@@ -36,6 +36,11 @@
     * make sure you turn on HTML tidy (& gem install tidy)
     * also allows security tests by fuzzing attacks
     * [display examples of code & HTML]
+    * installation:
+       * ./script/plugin install git://github.com/relevance/tarantula.git
+       * rake tarantula:setup
+       * edit test/tarantula/tarantula_test.rb
+       * rake tarantula:test
 
 
 == In Media Res ("into the middle of things") (visual: ???) == 

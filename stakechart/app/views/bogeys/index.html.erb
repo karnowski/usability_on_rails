@@ -18,7 +18,7 @@
     <td><%=h bogey.description %></td>
     <td><%= link_to 'Show', bogey %></td>
     <td><%= link_to 'Edit', edit_bogey_path(bogey) %></td>
-    <td><%= link_to 'Destroy', bogey, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', bogey, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
