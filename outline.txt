@@ -27,6 +27,9 @@
 * pull code out of view to test
   * test your helpers [find tester plugin?]
   * unit_controller [display examples]
+    * gem unpack unit_controller into vendor/gems
+    * in test_helper, require 'unit_controller'
+    * in functional test, @controller.do_not_render_view & assert_rendered (if necessary)
   * safe_erb [display examples]
 * your HTML/CSS is *DATA*, you don't test data, you *validate* it
   * tarantula

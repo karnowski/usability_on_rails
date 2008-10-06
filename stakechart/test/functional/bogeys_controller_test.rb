@@ -21,6 +21,7 @@ class BogeysControllerTest < ActionController::TestCase
   end
 
   def test_should_show_bogey
+    @controller.do_not_render_view
     get :show, :id => bogeys(:one).id
     assert_response :success
   end
