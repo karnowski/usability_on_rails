@@ -31,6 +31,8 @@
     * in test_helper, require 'unit_controller'
     * in functional test, @controller.do_not_render_view & assert_rendered (if necessary)
   * safe_erb [display examples]
+    * ./script/plugin install http://safe-erb.rubyforge.org/svn/plugins/safe_erb
+    * no other configuration needed
 * your HTML/CSS is *DATA*, you don't test data, you *validate* it
   * tarantula
     * make sure you turn on HTML tidy (& gem install tidy)
