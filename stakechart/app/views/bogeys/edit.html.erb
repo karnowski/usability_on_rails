@@ -1,0 +1,32 @@
+<h1>Editing bogey</h1>
+
+<% form_for(@bogey) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :living_name %><br />
+    <%= f.text_field :living_name %>
+  </p>
+  <p>
+    <%= f.label :classification %><br />
+    <%= f.text_field :classification %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @bogey %> |
+<%= link_to 'Back', bogeys_path %>

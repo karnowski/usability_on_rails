@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @bogey.name %>
+</p>
+
+<p>
+  <b>Living name:</b>
+  <%=h @bogey.living_name %>
+</p>
+
+<p>
+  <b>Classification:</b>
+  <%=h @bogey.classification %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @bogey.status %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @bogey.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_bogey_path(@bogey) %> |
+<%= link_to 'Back', bogeys_path %>

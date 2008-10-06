@@ -1,0 +1,28 @@
+<h1>Listing bogeys</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Living name</th>
+    <th>Classification</th>
+    <th>Status</th>
+    <th>Description</th>
+  </tr>
+
+<% for bogey in @bogeys %>
+  <tr>
+    <td><%=h bogey.name %></td>
+    <td><%=h bogey.living_name %></td>
+    <td><%=h bogey.classification %></td>
+    <td><%=h bogey.status %></td>
+    <td><%=h bogey.description %></td>
+    <td><%= link_to 'Show', bogey %></td>
+    <td><%= link_to 'Edit', edit_bogey_path(bogey) %></td>
+    <td><%= link_to 'Destroy', bogey, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New bogey', new_bogey_path %>

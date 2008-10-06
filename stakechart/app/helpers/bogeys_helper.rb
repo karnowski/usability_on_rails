@@ -1,0 +1,2 @@
+module BogeysHelper
+end
