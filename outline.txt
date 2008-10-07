@@ -148,6 +148,7 @@
 * don't make the user wonder if you heard them
   * [example?]
 * good error messages
+  * show a really bad array of error messages
   * validation messages are great for DEVELOPERS
   * need way to convert those to real error messages with contextual text & recommendation on how to fix
     * for example, "click the <something> button below"
@@ -207,6 +208,36 @@
 
 == QUESTIONS ==
 [15 minutes]
+
+
+== fit me in! ==
+ActionView::TestCase
+* automatically sets up a helpler
+* tests SomeHelper
+* automatically imports the relevant Rails helpers (link_to, h, route_path)
+
+show view with only a if/else with the decision based on a helper method
+
+
+unit_contorller
+* happy path for a controller action as a functional start
+* handle all of the errors cases as a unit tests
+
+* import into your test_helper
+* test, @controller.do_not_render_views
+* stores the render parametrs
+* you can call assert_rendered
+* find a case that is difficult to test with normal stubbing of render but good with...
+* double-stubbing
+
+
+content_for & layouts & breadcrumbs
+
+example JIT help
+
+
+rails validations
+
 
 
 
