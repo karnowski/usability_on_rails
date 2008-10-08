@@ -14,7 +14,7 @@
     <td><%=h daily_report.description %></td>
     <td><%= link_to 'Show', daily_report %></td>
     <td><%= link_to 'Edit', edit_daily_report_path(daily_report) %></td>
-    <td><%= link_to 'Destroy', daily_report, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', daily_report, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
