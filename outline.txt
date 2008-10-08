@@ -125,7 +125,20 @@
   * [better anecdote?]
 
 == Training Montage: (visual: training montage from somewhere?)  ==
-=== What makes for a usable application? ===
+== [hero-analogy?] Agile Usability Testing (visual: ???) ==
+* forget big labs, video & audio recorders
+* cheap, cheap, cheap
+* try to get REAL users  
+* use your neighbors, borrow your spouse & your mom
+* any human being can be a good test subject -- just grade on a curve
+* only need three testers, just be sure to rinse & repeat
+* "get it" testing --> "tell me what you see"
+  * sketches, wireframes, mockup, and real UI
+  * earlier the better
+  * as developers, we want to explain our work, but this isn't "show & tell", it's "I Spy" or looking at cloud animals
+* "think aloud" testing with set objectives
+
+== What makes for a usable application? ==
 (order/clean these up)
 (need tech example at this point)
 [trim this section WAY down]
@@ -176,19 +189,6 @@
   * too complicated, use helpers instead
   * need to have the web designers have input
 * better scaffolding?
-
-== [hero-analogy?] Agile Usability Testing (visual: ???) ==
-* forget big labs, video & audio recorders
-* cheap, cheap, cheap
-* try to get REAL users  
-* use your neighbors, borrow your spouse & your mom
-* any human being can be a good test subject -- just grade on a curve
-* only need three testers, just be sure to rinse & repeat
-* "get it" testing --> "tell me what you see"
-  * sketches, wireframes, mockup, and real UI
-  * earlier the better
-  * as developers, we want to explain our work, but this isn't "show & tell", it's "I Spy" or looking at cloud animals
-* "think aloud" testing with set objectives
 
 == Big Battle Scene (visual: ???) ==
 * at this point, we're out of the game
