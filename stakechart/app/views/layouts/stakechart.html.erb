@@ -4,14 +4,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Bogeys: <%=h controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <title>Title</title>
+  <%= stylesheet_link_tag 'stakechart' %>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<%= render :partial => "shared/primary_navigation" %>
 
-<%= yield  %>
+<% if flash[:notice] %>
+  <p style="color: green"><%= flash[:notice] %></p>
+<% end %>
 
+<div id="center-stage">
+  <%= yield %>
+</div>
 </body>
 </html>

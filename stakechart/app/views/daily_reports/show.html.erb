@@ -1,0 +1,18 @@
+<p>
+  <b>Report date:</b>
+  <%=h @daily_report.report_date %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @daily_report.user_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @daily_report.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_daily_report_path(@daily_report) %> |
+<%= link_to 'Back', daily_reports_path %>

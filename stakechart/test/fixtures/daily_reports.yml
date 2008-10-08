@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  report_date: 2008-10-07
+  user_id: 1
+  description: MyText
+
+two:
+  report_date: 2008-10-07
+  user_id: 1
+  description: MyText

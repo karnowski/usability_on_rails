@@ -1,0 +1,24 @@
+<h1>Editing daily_report</h1>
+
+<% form_for(@daily_report) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :report_date %><br />
+    <%= f.date_select :report_date %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @daily_report %> |
+<%= link_to 'Back', daily_reports_path %>

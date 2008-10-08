@@ -1,4 +1,7 @@
-body { background-color: #fff; color: #333; }
+body { 
+  background-color: #555; 
+  color: #333; 
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -12,10 +15,10 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
+/*a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
-
+*/
 .fieldWithErrors {
   padding: 2px;
   background-color: red;
@@ -52,3 +55,36 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#header {
+  background-image: url(/images/backgrounds/bgtexture_3_pale.gif);
+  height: 140px;
+  margin-bottom: 5px;
+}
+
+#header, #header ul#primary-nav-menu {
+  font-family: 'Van Helsing'; 
+}
+
+#header a { color: #fff; }
+#header a:visited { color: #666; }
+#header a:hover { color: blue; }
+
+
+div#header div#company-name { 
+  font-size: 96px; 
+  padding: 40px 40px 10px 40px;
+  color: #000;
+}
+
+div#header ul#primary-nav-menu {
+  font-size: 36px;
+}
+
+div#header ul#primary-nav-menu li {
+  display: inline-block;
+  color: black;
+}
+
+div#center-stage {
+  background-color: #fff;
+}
