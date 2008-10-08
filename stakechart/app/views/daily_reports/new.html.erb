@@ -1,15 +1,17 @@
 <h1>New daily_report</h1>
 
+<%# TODO: make me a helper function! %>
+<% current_user = User.find_by_login("bruce") %>
+
 <% form_for(@daily_report) do |f| %>
   <%= f.error_messages %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <p>Investigator: <%=h current_user.full_name %><p>
 
   <p>
     <%= f.label :report_date %><br />
     <%= f.date_select :report_date %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
   </p>
   <p>
     <%= f.label :description %><br />

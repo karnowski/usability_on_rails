@@ -3,14 +3,14 @@
 <table>
   <tr>
     <th>Report date</th>
-    <th>User</th>
+    <th>Investigator</th>
     <th>Description</th>
   </tr>
 
 <% for daily_report in @daily_reports %>
   <tr>
     <td><%=h daily_report.report_date %></td>
-    <td><%=h daily_report.user_id %></td>
+    <td><%=link_to h(daily_report.investigator.full_name), user_path(daily_report.investigator) %></td>
     <td><%=h daily_report.description %></td>
     <td><%= link_to 'Show', daily_report %></td>
     <td><%= link_to 'Edit', edit_daily_report_path(daily_report) %></td>
