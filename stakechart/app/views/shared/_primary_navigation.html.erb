@@ -1,7 +1,8 @@
 <div id="header">
-  <div id="company-name">Van Helsing Inc</div>
+  <div id="company-name">StakeChart</div>
 
   <ul id="primary-nav-menu">
+    <li><%= link_to_unless_current "Home", root_path %></li>    
     <li><%= link_to_unless_current "Bogeys", bogeys_path %></li>
     <li><%= link_to_unless_current "Daily Reports", daily_reports_path %></li>
     <li><%= link_to_unless_current "Investigators", users_path %></li>
