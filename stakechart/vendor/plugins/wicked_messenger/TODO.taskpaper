@@ -1,0 +1,42 @@
+Better  Rails error messages:
+- allow whitelist/blacklist @done
+- allow to create error codes instead of messages
+- allow view to choose better messages for each error code based ont he context
+- change to not always prepend the attribute name
+- allow adding/removing of error messages very easily @done
+- allow error messages on any object, esp non ActiveRecord ones
+	- support Jay Fields' "validatable" plugin/gem
+- per bigfleet: have a stand-alone gem as well as rails plugin, to handle stand-alone activerecord apps
+- brainstorm a DSL @done
+- create a README @done
+- create a rails plugin directory structure @done
+- create a temporary dir/file in lib (so it'll be reloaded)  @done
+- write a framework that let's be me build a DSL in the future @done
+	- should monkey-patch error_messages_for @done
+	- if called without a block, call the old error_messages_for @done
+
+- break the modules up so there is one for base functionality and one for Rails-extensions like error_messsages_for? @done
+	- this might also let me remove the fake "alias_method_chain" in the tests? @done
+
+- find a safer/better way to handle the safe_erb conflict without manually calling "untaint" on the output from the base error_messages_for?
+- handle all the normal options for error_messages_for
+	 - header_tag - Used for the header of the error div (default: h2)
+	- id - The id of the error div (default: errorExplanation)
+	- class - The class of the error div (default: errorExplanation) @done
+	- object - The object (or array of objects) for which to display errors, if you need to escape the instance variable convention
+	- object_name - The object name to use in the header, or any text that you prefer. If object_name is not set, the name of the first object will be used.
+	- header_message - The message in the header of the error div. Pass nil or an empty string to avoid the header message altogether. (default: X errors prohibited this object from being saved)
+	- message - The explanation message after the header message and before the error list. Pass nil or an empty string to avoid the explanation message altogether. (default: There were problems with the following fields:)
+- override the default error_message_on method too?
+- automatically expand the errors of any "validates_associated" invalid component objects
+- support trumping @done
+- support replacing the output of an error message @done
+- support adding additional messages @done
+- support passing an error object instead of just the (object, field, message) tuple as parameters to methods like suppress, trump, etc @done
+- handle f.errors (when f is a form object)
+- change the name of the plugin... "wicked messenger"?  not sure
+Object model changes:
+- make an ActiveRecord::Observer-like pattern:
+	- example, say someone has a UsersController, if they make a UsersErrorFilter object, than we'll use it to filter the error messages
+	- this object should be testable
+
