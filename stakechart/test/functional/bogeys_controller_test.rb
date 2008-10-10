@@ -14,7 +14,7 @@ class BogeysControllerTest < ActionController::TestCase
 
   def test_should_create_bogey
     assert_difference('Bogey.count') do
-      post :create, :bogey => { }
+      post :create, :bogey => new_bogey.attributes
     end
 
     assert_redirected_to bogey_path(assigns(:bogey))
