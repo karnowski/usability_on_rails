@@ -9,3 +9,8 @@ two:
   login: MyString
   email: MyString
   full_name: MyString
+
+bruce:
+  login: bruce
+  email: dont_call_be_ash@gmail.com
+  full_name: Bruce Campbell

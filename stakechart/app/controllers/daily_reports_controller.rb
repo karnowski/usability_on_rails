@@ -1,4 +1,6 @@
 class DailyReportsController < ApplicationController
+  helper :application
+  
   # GET /daily_reports
   # GET /daily_reports.xml
   def index
@@ -41,6 +43,7 @@ class DailyReportsController < ApplicationController
   # POST /daily_reports.xml
   def create
     @daily_report = DailyReport.new(params[:daily_report])
+    @daily_report.investigator = current_user
 
     respond_to do |format|
       if @daily_report.save
