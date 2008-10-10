@@ -1,0 +1,12 @@
+== Books ==
+* _Don't Make Me Think_ by Steve Krug (New Riders)
+* _Designing Interfaces_ by Jenifer Tidwell (O'Reilly & Assoc)
+* _Design of Everyday Things_ by Don Norman ([???])
+* _The Inmates Are Running the Asylum_ by [Alan Cooper] ([???])
+* _Prioritizing Web Usability_ by Jakob Nielsen & Hoa Loranger (New Riders)
+* _The Back of the Napkin_ by Dan Roam (Portfolio)
+
+== Blogs ==
+* Kathy Sierra [url?]
+* Boxes & Arrows [url?]
+* Adaptive Path [url?]
