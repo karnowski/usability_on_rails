@@ -7,5 +7,5 @@ one:
 
 two:
   report_date: 2008-10-07
-  user_id: 1
+  investigator: bruce
   description: MyText
