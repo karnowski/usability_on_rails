@@ -1,4 +1,4 @@
-require '../test_helper'
+require File.dirname(__FILE__) + '/../test_helper'
 
 class ApplicationHelperTest < ActionView::TestCase
   def test_full_name_of_current_user
