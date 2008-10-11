@@ -27,6 +27,7 @@ class DailyReportsController < ApplicationController
   # GET /daily_reports/new.xml
   def new
     @daily_report = DailyReport.new
+    @daily_report.bogey = @bogey = Bogey.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +44,7 @@ class DailyReportsController < ApplicationController
   # POST /daily_reports.xml
   def create
     @daily_report = DailyReport.new(params[:daily_report])
+    @daily_report.bogey = @bogey = Bogey.new(params[:bogey])
     @daily_report.investigator = current_user
 
     respond_to do |format|

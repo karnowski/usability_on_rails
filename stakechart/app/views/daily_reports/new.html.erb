@@ -1,21 +1,73 @@
+<style type="text/css">
+  fieldset {
+    float: left !important;
+    border: none;
+  }  
+</style>
+
 <h1>New daily_report</h1>
 
 <% form_for(@daily_report) do |f| %>
-  <%= f.error_messages %>
+  <%= 
+    error_messages_for :daily_report, :bogey do
+      # trump error(:bogey, :status, "can't be blank"), :over => error(:daily_report, :bogey, "is invalid")
+      # trump error(:bogey, :classification, "can't be blank"), :over => error(:daily_report, :bogey, "is invalid")
+      # trump error(:bogey, :living_name, "can't be blank"), :over => error(:daily_report, :bogey, "is invalid")
+      # trump error(:bogey, :name, "can't be blank"), :over => error(:daily_report, :bogey, "is invalid")                  
+    end 
+  %>
 
-  <p>Investigator: <%=h full_name_of_current_user %></p>
+  <fieldset>
+    <p>Investigator: <%=h full_name_of_current_user %></p>
 
-  <p>
-    <%= f.label :report_date %><br />
-    <%= f.date_select :report_date %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
+    <p>
+      <%= f.label :report_date %><br />
+      <%= f.date_select :report_date %>
+    </p>
+    <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </p>
+  </fieldset>
+  
+  <% fields_for :bogey do |bogey_fields| %>
+    <fieldset>
+      <h2>Bogey Details</h2>
+
+      <p>
+        <%= bogey_fields.label :name %><br />
+        <%= bogey_fields.text_field :name %>
+      </p>
+
+      <p>
+        <%= bogey_fields.label :living_name %><br />
+        <%= bogey_fields.text_field :living_name %>
+      </p>
+      
+      <p>
+        <%= bogey_fields.label :classification %><br />
+        <%= bogey_fields.select :classification, ["Apparition", "Ghost", "Ghoul", "Poltergeist", "Vampire", "Zombie"], :include_blank => true %>
+      </p>
+      
+      <p>
+        <%= bogey_fields.label :status %><br />
+        <%= bogey_fields.select :status, ["At Large", "Contained - Ectoplasmic Laser Grid", "Contained - Physical Lockdown", "Destroyed", "Exorcised", "Friendly", "Unknown"], :include_blank => true %>
+      </p>
+      
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description, :rows => 8 %>
+      </p>
+    </fieldset>  
+  <% end %>
+
+  <br clear="both"/>
+  
+    <p>
+      <%= f.submit "Create" %>
+    </p>
+  
 <% end %>
+
 
 <%= link_to 'Back', daily_reports_path %>
