@@ -1,0 +1,19 @@
+<%
+  error_messages_for :company_invitation, :user do 
+    suppress :company_invitation, :invitee, :invalid
+    suppress :user, :base, "User requires either a vendor or a corporation"
+    
+    only_invite_from_own_company = error(:company_invitation, :base, "You can only invite users from your company")
+    invalid_email_address = error(:user, :email, "is not a valid e-mail address")
+    known_company_domain = error(:company_invitation, :invitee_email, "must match an existing company's domain")
+    
+    trump :company_invitation, :base, "You can only invite users from your company", :over => error(:user, :email, "is not a valid e-mail address")
+    trump :company_invitation, :base, :invite_only_from_own_company, :over => error(:user, :email, :invalid_email)
+    
+    trump invalid_email_address, :over => only_invite_from_own_company
+    trump only_invite_from_own_company, :over => known_company_domain
+    
+    # replace :user, :base, "some really, really bad error message", :with => "A much nicer message that includes #{@some_local_variable}."
+    # add :some_field, :silliness_level, "has been exceeded"
+  end
+%>
