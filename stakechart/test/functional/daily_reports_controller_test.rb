@@ -17,7 +17,7 @@ class DailyReportsControllerTest < ActionController::TestCase
   def test_should_create_daily_report
     @controller.do_not_render_view
     assert_difference('DailyReport.count') do
-      post :create, :daily_report => { }
+      post :create, :daily_report => new_daily_report.attributes
     end
 
     assert_redirected_to daily_report_path(assigns(:daily_report))

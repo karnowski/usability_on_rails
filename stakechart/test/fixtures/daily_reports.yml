@@ -4,6 +4,7 @@ one:
   report_date: 2008-10-07
   investigator: bruce
   description: MyText
+  bogey: one
 
 two:
   report_date: 2008-10-07

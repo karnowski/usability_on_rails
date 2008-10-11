@@ -7,7 +7,8 @@ module FixtureReplacement
   end
 
   attributes_for :daily_report do |a|
-    
+    a.investigator = default_user
+    a.bogey = default_bogey
   end
 
   attributes_for :user do |a|
